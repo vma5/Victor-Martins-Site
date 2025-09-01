@@ -1,0 +1,12 @@
+{
+  "name": "victor-martins-site",
+  "version": "1.0.0",
+  "description": "Site criado para consultoria e oportunidadees no mercado de trabalho na área de TI",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
