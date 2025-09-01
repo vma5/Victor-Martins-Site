@@ -1,49 +1,56 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
+
 const app = express();
 const port = 3000;
 
-// Middleware para processar dados do formulário
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Servir arquivos estáticos (HTML, CSS, JS)
+// Configurar o middleware para servir arquivos estáticos (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, '')));
 
-// Rota para o formulário de contato
+// Configurar o middleware para processar dados do formulário
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Rota POST para processar o formulário de contato
 app.post('/enviar-email', (req, res) => {
+    // Extrair os dados do corpo da requisição
     const { nome, email, assunto, mensagem } = req.body;
 
-    // Crie o transportador Nodemailer (configure com suas informações de e-mail)
+    // Configuração do transportador de e-mail (usando Gmail como exemplo)
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // Exemplo: 'gmail', 'hotmail' etc.
+        service: 'gmail',
         auth: {
-            user: 'seu.email@gmail.com', // Seu e-mail
-            pass: 'sua_senha_de_app_gmail' // Senha de app gerada pelo Google
+            user: 'victormartisn321.va1@gmail.com', // Seu endereço de e-mail
+            pass: 'njty tmmj bizx mrpu' // Use a senha de app gerada pelo Google
         }
     });
 
-    // Configure o conteúdo do e-mail
+    // Conteúdo do e-mail
     const mailOptions = {
-        from: email,
-        to: 'victormartisn321.va1@gmail.com', // Seu e-mail de destino
+        from: `"${nome}" <${email}>`,
+        to: 'victormartisn321.va1@gmail.com', // Endereço para onde a mensagem será enviada
         subject: `Novo Contato do Portfólio: ${assunto}`,
-        text: `Nome: ${nome}\nE-mail: ${email}\nMensagem: ${mensagem}`
+        html: `
+            <p><strong>Nome:</strong> ${nome}</p>
+            <p><strong>E-mail:</strong> ${email}</p>
+            <p><strong>Mensagem:</strong> ${mensagem}</p>
+        `
     };
 
-    // Envie o e-mail
+    // Enviar o e-mail
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
-            res.status(500).send('Erro ao enviar a mensagem.');
-        } else {
-            console.log('E-mail enviado: ' + info.response);
-            res.status(200).send('Mensagem enviada com sucesso!');
+            console.error('Erro ao enviar o e-mail:', error);
+            return res.status(500).send('Erro ao enviar a mensagem.');
         }
+        console.log('Mensagem enviada:', info.response);
+        res.status(200).send('Mensagem enviada com sucesso!');
     });
 });
 
+// Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
