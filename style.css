@@ -1,9 +1,9 @@
 :root {
     --primary-color: #007BFF;
-    --secondary-color: #253e57;
+    --secondary-color: #0b0e11;
     --text-color: #0d0d0d;
-    --light-bg: #f6efef;
-    --white-color: #e9dcdc;
+    --light-bg: #f7f4f4;
+    --white-color: #f3ebeb;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -65,7 +65,7 @@ header nav a:hover {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(to right, #eaf2fd, #fff);
+    background: linear-gradient(to right, #507cb1, #825454);
     padding: 4rem 0;
 }
 
