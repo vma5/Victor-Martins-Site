@@ -2,8 +2,8 @@
     --primary-color: #007BFF;
     --secondary-color: #0b0e11;
     --text-color: #0d0d0d;
-    --light-bg: #f7f4f4;
-    --white-color: #f3ebeb;
+    --light-bg: #f3ecec;
+    --white-color: #f3eded;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,6 +33,26 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.logo {
+    max-height: 100px; /* Ajuste o tamanho da altura máxima conforme necessário */
+    width: auto;     /* Mantém a proporção da imagem */
+    margin-right: 40px; /* Espaçamento à direita se estiver ao lado do título */
+    /* Outros estilos, como display: inline-block; para alinhar com o texto */
+}
+
+/* Se você usou a classe 'logo-and-title' para alinhar, adicione isso: */
+.header .container.logo-and-title {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Distribui itens na horizontal, se for o caso */
+}
+
+/* Ajuste o h1 para não ter margin-top ou bottom excessivos, se necessário */
+.header .container.logo-and-title h1 {
+    margin: 0;
+    line-height: 1; /* Para alinhar com a logo */
 }
 
 header .container {
@@ -230,7 +250,7 @@ section h2 {
 #contato form input, #contato form textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ccc;
+    border: 1px solid #514e4e;
     border-radius: 5px;
 }
 
