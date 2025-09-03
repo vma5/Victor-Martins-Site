@@ -1,3 +1,5 @@
 # Victor-Almeida 
 
-Site criado para consultoria e oportunidadees no mercado de trabalho na área de TI
+Site criado para mercado de trabalho como profissional em TI.
+
+Site simples e estruturado com HTML-CSS-JS.
