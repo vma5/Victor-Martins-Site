@@ -23,7 +23,7 @@ app.post('/enviar-email', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'victormartisn321.va1@gmail.com', // Seu endereço de e-mail
-            pass: 'chkl awud jmay sndh' // Use a senha de app gerada pelo Google
+            pass: 'rbvi gwtx vofu ffvq' // Use a senha de app gerada pelo Google
         }
     });
 
