@@ -30,7 +30,7 @@ app.post('/enviar-email', (req, res) => {
     // Conteúdo do e-mail
     const mailOptions = {
         from: `"${nome}" <${email}>`,
-        to: 'victormartisn321.va1@gmail.com', // Endereço para onde a mensagem será enviada
+        to: 'victormartins321.va1@gmail.com', // Endereço para onde a mensagem será enviada
         subject: `Novo Contato do Portfólio: ${assunto}`,
         html: `
             <p><strong>Nome:</strong> ${nome}</p>
