@@ -22,7 +22,7 @@ app.post('/enviar-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'victormartisn321.va1@gmail.com', // Seu endereço de e-mail
+            user: 'victormartins321.va1@gmail.com', // Seu endereço de e-mail
             pass: 'rbvi gwtx vofu ffvq' // Use a senha de app gerada pelo Google
         }
     });
